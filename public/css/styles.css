@@ -1,0 +1,714 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --main-green: #5e8c6a;
+}
+
+.heading-and-info {
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    height: 70%;
+    width: auto;
+}
+.extra-info {
+    display: none;
+    line-height: 30px;
+    font-size: 4px;
+    top: 0;
+    left: 50px;
+    transition: all .2s ease;
+}
+
+.info:hover .extra-info {
+    display: inline;
+    transition: all .2s ease;
+}
+
+.info {
+    font-size: 10px;
+    /* padding-left: 5px; */
+    width: 20px;
+}
+
+.info:hover {
+    background-color: white;
+    padding: 0 0 0 5px;
+    width: 315px;
+    text-align: left !important;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    /* font-family: "Pangolin", system-ui, sans-serif; */
+    /* font-family: roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; */
+    /* font-family: 'Open Sans', sans-serif; */
+    font-family: Poppins,sans-serif;
+    letter-spacing: 0.1px;
+    word-spacing: 1px;
+    line-height: 1.5;
+    padding-bottom: 1rem;
+    min-width: 100vw;
+}
+
+
+:root {
+    --shadow-color: #eee;
+    --body-color: #f0ffff;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+h1,
+h2,
+h3,
+label,
+.feature-heading,
+input {
+    line-height: unset;
+}
+
+.feature-heading,.hero-heading, .hero-sub-heading {
+    font-family:Poppins,sans-serif !important;
+}
+
+.brand {
+    font-size: 2rem;
+    margin: unset;
+}
+
+
+.animated-gradient-2 {
+
+    /* background: rgb(78, 1, 105); */
+    background: rgb(94,140,106);
+
+    background: linear-gradient(45deg,
+            /* #887ba7, */
+            rgb(40, 59, 42) 0% 10%,
+            #e9bd9a,
+            #8db596,
+            rgb(40, 59, 42) 80% 90%,
+            #e9bd9a,
+            #8db596);
+
+    background-size: 300% 300%;
+    animation: backgroundChange6 2.5s ease infinite alternate;
+
+    /* Use the text as a mask for the background. */
+    /* This will show the gradient as a text color rather than element bg. */
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgb(94,140,106, 0.3);
+    -moz-background-clip: text;
+    -moz-text-fill-color: rgb(94,140,106, 0.3);
+
+}
+
+
+.bold-700 {
+    color: #5e8c6a;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* height: 100px; */
+    width: 100vw;
+    padding: 1.5rem 5rem 0.5rem 5rem !important;
+    color: #000;
+    /* margin-bottom: 0rem; */
+}
+
+.navbar {
+    box-shadow: none;
+}
+
+
+header a,
+header a:active,
+header a:hover,
+header a:focus {
+    /* font-family: roboto-slab, 'Times New Roman', Times, serif; */
+    text-decoration: none;
+    color: inherit;
+    padding: 3px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+    list-style: none;
+    font-weight: 550;
+    font-size: 1rem;
+    margin: 0 !important;
+    padding: 0;
+
+}
+
+
+nav a:hover {
+    color: #5e8c6a;
+    opacity: 0.8;
+}
+
+
+body {
+    min-height: 100vh;
+    background-color: rgb(250, 235, 215, 0.4);
+}
+
+.heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    gap: 0.45rem;
+}
+
+.hero-heading {
+    /* font-family: roboto-slab, 'Times New Roman', Times, serif; */
+    /* font-family: 'Fraunces', serif; */
+    font-family: 'Playpen Sans', cursive;
+    color: #5e8c6a;
+    font-size: 2.75rem;
+    font-weight: 500;
+}
+
+.hero-sub-heading {
+    /* font-family: roboto-slab, 'Times New Roman', Times, serif; */
+    /* font-family: 'Fraunces', serif; */
+    font-family: 'Playpen Sans', cursive;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: black;
+}
+
+input[type="text"]:not(#userPassword, #userFirstName, #userLastName, #userContactNumber),
+input[type="submit"],
+input[type="button"]
+ {
+    display: inline;
+    outline: none;
+    /* min-width: 300px; */
+    width: 20%;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+button {
+    outline: none;
+    /* min-width: 300px; */
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    margin: 0.25rem auto 0.25rem;
+    background-color: #5e8c6a;
+    border-color: #5e8c6a;
+    color: #f0ffff;
+}
+
+textarea {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: var(--main-box-color);
+    width: auto;
+
+}
+
+
+input[type="text"]:not(#userPassword, #userFirstName, #userLastName, #userContactNumber) {
+    margin: 0.5rem auto 0.4rem;
+    background-color: var(--main-box-color);
+    border: 1px solid grey;
+}
+
+input[type="submit"], input[type="button"] {
+    margin: 0.25rem auto 0.25rem;
+    background-color: #5e8c6a;
+    border-color: #5e8c6a;
+    color: #f0ffff;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover{
+    background-color: #5e8c6a;
+    opacity: 0.8;
+    transition: 5ms;
+}
+
+
+main {
+    text-align: center;
+    width: 85%;
+    /* min-width: 450px; */
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 1rem auto;
+}
+
+.login-main {
+    width: 50%;
+    margin: 3rem auto;
+    padding: 3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+
+
+footer {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #4f4f4f;
+    width: 100vw;
+    margin: 5rem auto;
+    /* bottom: 0;
+    display: none; */
+}
+
+footer a {
+    text-decoration: none;
+    color: #5e8c6a;
+}
+
+footer a:hover {
+    color: #5e8c6a;
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+#features {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: center;
+    /* margin-top: 2rem; */
+}
+
+.feature {
+    width: 28%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+
+
+.feature-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.05rem;
+    margin: 0rem auto 0.3rem;
+    color: black;
+    font-weight: 500;
+    font-family: 'Playpen Sans', cursive;
+}
+
+
+.feature-heading i {
+    font-size: 1.2rem;
+    color: #5e8c6a;
+    /* color: black; */
+    /* -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; */
+}
+
+.feature-content {
+    background-color: var(--main-box-color);
+    border-radius: 0.25rem;
+    padding: 1.5rem 1.5rem 1.5rem;
+    box-shadow: 0px 0px 5px #ccc;
+    height: calc(100% - 5.5rem);
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.feature-content p {
+    margin: 0;
+
+
+}
+
+.feature:hover {
+    transform: scale(1.04);
+}
+
+
+
+#affirmations-generator {
+    margin: 1rem auto 0rem;
+    width: 100%;
+}
+
+#affirmations-pit {
+    width: 90%;
+    min-height: 200px;
+    box-shadow: 0px 0px 5px #ccc inset;
+    margin: 0.5rem auto 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: scroll;
+}
+
+
+.affirmation-placeholder {
+    font-weight: 500;
+    color: rgb(78, 1, 105, 0.6);
+    /* color: red; */
+}
+
+.affirmation-text {
+    font-size: 16px;
+    font-weight: 500;
+    color: #4e0169;
+    padding: 1rem 2rem;
+}
+
+/* .spinner {
+    font-size: 16px;
+    font-weight: 500;
+    color: #4e0169;
+} */
+
+label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    /* line-height: 1.5; */
+    color: #000
+}
+
+.carousel-inner {
+    width: 85%;
+    margin: auto;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    color: rgba(0, 0, 0);
+}
+
+.carousel-indicators {
+    bottom: -2.5rem;
+}
+
+.carousel-indicators button {
+    margin: 0 5px 0;
+    min-width: 20px;
+    height: 2px;
+    opacity: 0.8;
+}
+
+
+
+.carousel-indicators button:hover {
+    opacity: 0.5;
+}
+
+.carousel-indicators button[class="active"] {
+    opacity: 1;
+}
+
+.accordion {
+    width: 90%;
+    margin: auto;
+}
+
+.buy-sell-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: auto;
+}
+/* .accordion-body {
+    text-align: left;
+}
+
+.accordion-body a,
+.accordion-body a:hover,
+.accordion-body a:focus {
+    color: rebeccapurple;
+}
+
+
+.accordion-button:not(.collapsed),
+.accordion-button:not(.collapsed)::after {
+    color: rebeccapurple !important;
+    font-weight: 600;
+} */
+
+
+
+@media only screen and (min-width: 500px) {
+
+    main {
+        min-width: 400px;
+    }
+
+}
+
+@media only screen and (max-width: 950px) {
+
+
+
+    .feature-heading {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #features {
+        flex-direction: column;
+        justify-content: unset;
+        align-items: center;
+    }
+
+    .feature,
+    .hero-sub-heading {
+        width: 75%;
+    }
+
+    .hero-sub-heading {
+        line-height: 1.5;
+    }
+
+
+    header {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+
+/* 
+@media only screen and (max-width: 650px) {
+    #features {
+        flex-direction: column;
+        justify-content: unset;
+        align-items: center;
+    }
+
+    .feature {
+        width: 85%;
+    }
+} */
+
+
+
+@keyframes backgroundChange6 {
+    0% {
+        background-position: 0% 70%;
+    }
+
+    /* 50% {
+        background-position: 50% 100%;
+    }
+
+    75% {
+        background-position: 100% 50%;
+    } */
+
+    100% {
+        background-position: 70% 0%;
+    }
+}
+
+h1,
+h2,
+h3 {
+    margin: unset;
+}
+
+
+#spinner {
+    font-size: 2rem;
+    display: none;
+}
+
+
+/* BUY PAGE HTML */
+
+.checkbox-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: unset;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* Standard Checkbox */
+.checkbox-group input[type="checkbox"] {
+    /* Hide the default checkbox */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 2px solid #4CAF50; /* Green border color */
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Checked Checkbox - Green tick mark */
+.checkbox-group input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Unicode character for check mark */
+    display: block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    font-size: 14px;
+    color: #4CAF50; /* Green color for the tick mark */
+    background-color: #ffffff; /* White background */
+    border: 2px solid #4CAF50; /* Green border color */
+    border-radius: 3px;
+}
+
+
+#sell-form {
+    margin: auto;
+    width: 65%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#sell-form fieldset legend {
+    display: inline;
+    margin-right: 2rem;
+    text-align: left;
+    margin-bottom: unset;
+    width: unset !important
+  }
+  
+  #sell-form fieldset .form-group {
+    display: inline-block;
+    font-size: 1rem;
+  }
+  
+  #sell-form fieldset .form-group input {
+    width: 100%; /* Adjust as needed */
+    font-size: 1rem;
+  }
+
+  fieldset:has(legend) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .sell-heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem !important;
+  }
+
+  .sell-heading-fieldset label {
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: rgb(94, 140, 106, 0.5) ;
+    margin-bottom: -0.5rem;
+  }
+
+  .sell-subsection{
+    text-decoration: solid;
+    font-weight: 700;
+    margin: 2rem auto 1rem;
+    text-align: center;
+    color: #5e8c6a;
+  }
+
+  .name-and-description {
+    display: flex;
+    width: min-content;
+    flex-direction: column;
+    margin-right: 2rem;
+  }
+
+
+.radio label, .checkbox label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.radio label input, .checkbox label input {
+    width: auto !important;
+}
+
+  .form-group:has(.radio), .form-group:has(.checkbox){
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+  }
+
+  .login-main {
+    text-align: left;
+  }
+
+  .login-main .form-group label:not(.form-check-label), h1 {
+    font-weight: 700;
+    color: var(--main-green);
+  }
+
+  .login-main a {
+    color: var(--main-green);
+    text-decoration: underline;
+  }
+
+  .auth-submit {
+    display: block; /* Make the button a block-level element */
+    margin: auto;
+    width: 100%;
+  }
+
+  .login-main .form-group:not(.form-check) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .auth-alt {
+    width: 100%;
+    text-align: center;
+  }
+
+.checkbox-horizontal-flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

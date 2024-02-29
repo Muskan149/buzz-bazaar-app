@@ -1,25 +1,56 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
-function App() {
+import NavBar from './components/NavBar';
+import Index from './components/Index';
+import Buy from './components/Buy';
+import Buy1 from './components/Buy1';
+
+import Sell from './components/Sell';
+import Sell1 from './components/Sell1';
+import Sell2 from './components/Sell2';
+
+import ImageUpload from './components/ImageUpload.js';
+
+
+import UserProfile from './components/UserProfile';
+import Login from './components/Login';
+import Register from './components/Register';
+import { SessionContext } from './components/AuthProvider';
+
+// New component to handle conditional navigation
+// const ConditionalRoute = ({ element, session }) => {
+//   if (session) {
+//     return element;
+//   } else {
+//     return <Navigate to="/login" />;
+//   }
+// };
+
+const App = () => {
+  const session = useContext(SessionContext);
+  // const prevPage = window.location.pathname
+  // console.log("Current page is " + prevPage)
+  console.log("Session " + session)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar session={session}/>
+      <main>
+      <Routes>
+        <Route path="/" default element={<Index />} />
+        <Route path="/index" element={<Index />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/buy" element={<Buy />} />
+        <Route path="/sell" element={<Sell2 />} /> 
+        <Route path="/image" element={<ImageUpload />} /> 
+        {/* <Route path="/sell" element={session ? <Sell2 /> : <Login/>} />  */}
+        {/* todo: why is navigate to not working here */}
+        <Route path="/userProfile" element={session ? <UserProfile /> : <Navigate to = "/"/> } />
+      </Routes>
+      </main>
+    </>
   );
-}
+};
 
 export default App;
