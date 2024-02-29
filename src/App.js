@@ -42,9 +42,8 @@ const App = () => {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/buy" element={<Buy />} />
-        <Route path="/sell" element={<Sell2 />} /> 
         <Route path="/image" element={<ImageUpload />} /> 
-        {/* <Route path="/sell" element={session ? <Sell2 /> : <Login/>} />  */}
+        <Route path="/sell" element={session ? <Sell2 /> : <Login/>} /> 
         {/* todo: why is navigate to not working here */}
         <Route path="/userProfile" element={session ? <UserProfile /> : <Navigate to = "/"/> } />
       </Routes>
