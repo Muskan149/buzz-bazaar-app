@@ -10,11 +10,14 @@ const supabase = createClient(supabaseUrl, supabaseKey)
 // Deciding the type of auth to perform: login or register
 export function performAuth() {
     const authButton = document.getElementById("authButton");
-    if (authButton.textContent.toLowerCase() == "register") {
-        register()
-    } else {
-        login()
+    if (authButton) {
+        if (authButton.textContent.toLowerCase() == "register") {
+            register()
+        } else {
+            login()
+        }
     }
+    
 }
 
 // Register function

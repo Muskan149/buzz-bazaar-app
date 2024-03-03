@@ -67,6 +67,22 @@ const Sell2 = () => {
     }
 
     const submitForm = async (e) => {
+
+        // Check if all required fields are filled
+        const requiredFields = ['product_name', 'product_category', 'product_description', 'product_price', 'rendezvous'];
+        const unfilledFields = requiredFields.filter(field => formData[field].length <= 0);
+                
+        // If any required field is not filled, display an error alert
+        if (unfilledFields.length > 0) {
+            alert(`Please fill the following required fields: ${unfilledFields.join(', ')}`);
+            return; // Prevent form submission
+        }
+
+        if (publicURL == null) {
+            alert(`Please upload at least 1 product image`);
+            return; // Prevent form submission
+        }
+
         e.preventDefault()
         console.log(userId)
         const payment_method = listToString();
@@ -100,7 +116,8 @@ const Sell2 = () => {
             console.error('Error inserting data:', error.message);
         } else {
             console.log('Data inserted successfully:', Object.entries(data));
-            alert('Data inserted successfully!');
+            alert('Your product is listed! 🚀');
+            window.location.reload();
         }
 
     };
@@ -120,7 +137,7 @@ const Sell2 = () => {
             <fieldset>
                 <legend htmlFor="product_name">Product Name</legend>
                 <div className="form-group">
-                    <input id="product_name" type="text" name="product_name" className="form-control" required onChange={handleInputChange}/>
+                    <input id="product_name" type="text" name="product_name" className="form-control" onChange={handleInputChange} required/>
                 </div>
             </fieldset>
 
@@ -130,7 +147,7 @@ const Sell2 = () => {
                     {/* Replace "name" with "id" for better accessibility */}
                     <div className="radio">
                         <label>
-                            <input type="radio" id="product_category" name="product_category" value="Electronics/Appliances" required onChange={handleInputChange}/>
+                            <input type="radio" id="product_category" name="product_category" value="Electronics/Appliances" onChange={handleInputChange} required/>
                             Electronics/Appliances
                         </label>
                     </div>
@@ -191,7 +208,7 @@ const Sell2 = () => {
                     <p className="help-block">Enter details of the product (for example: condition, age)</p>
                 </div>
                 <div className="form-group">
-                    <textarea id="product_description" name="product_description" rows="4" cols="50" onChange={handleInputChange}/>
+                    <textarea id="product_description" name="product_description" rows="4" cols="50" onChange={handleInputChange} required/>
                 </div>
             </fieldset>
 
@@ -199,7 +216,7 @@ const Sell2 = () => {
                 <legend htmlFor="product_image">Product Image</legend>
                 <div className="form-group">
                 <ImageUpload onPublicURLChange={handlePublicURLChange} />
-                {publicURL && <img src={publicURL} alt="Uploaded" />} {/* Show uploaded image */}
+                {/* {publicURL && <img src={publicURL} alt="Uploaded" />} Show uploaded image */}
                 </div>
             </fieldset>
 
@@ -222,13 +239,13 @@ const Sell2 = () => {
                 <div className="form-group">
                     <div className="radio">
                         <label>
-                            <input type="radio" name="price_negotiable" value="Yes" onChange={handleInputChange}/>
+                            <input type="radio" name="price_negotiable" value="Yes" onChange={handleInputChange} required/>
                             Yes
                         </label>
                     </div>
                     <div className="radio">
                         <label>
-                            <input type="radio" name="price_negotiable" value="No" onChange={handleInputChange}/>
+                            <input type="radio" name="price_negotiable" value="No" onChange={handleInputChange} required/>
                             No
                         </label>
                     </div>
@@ -240,29 +257,29 @@ const Sell2 = () => {
             </fieldset>
 
             <fieldset>
-                <legend htmlFor="payment-method">Preferred Payment Methods</legend>
+                <legend htmlFor="payment-method" >Preferred Payment Methods</legend>
                 <div className="form-group">
                     <div className="checkbox">
                         <label>
-                            <input type="checkbox" name="payment-method" value="PayPal" />
+                            <input type="checkbox" name="payment-method" value="PayPal" required />
                             PayPal
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="payment-method" value="Venmo" />
+                            <input type="checkbox" name="payment-method" value="Venmo" required/>
                             Venmo
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="payment-method" value="Zelle" />
+                            <input type="checkbox" name="payment-method" value="Zelle" required/>
                             Zelle
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="payment-method" value="Cash" />
+                            <input type="checkbox" name="payment-method" value="Cash" required/>
                             Cash
                         </label>
                     </div>
