@@ -1,18 +1,10 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-
 import NavBar from './components/NavBar';
 import Index from './components/Index';
 import Buy from './components/Buy';
-import Buy1 from './components/Buy1';
-
-import Sell from './components/Sell';
-import Sell1 from './components/Sell1';
 import Sell2 from './components/Sell2';
-
 import ImageUpload from './components/ImageUpload.js';
-
-
 import UserProfile from './components/UserProfile';
 import Login from './components/Login';
 import Register from './components/Register';

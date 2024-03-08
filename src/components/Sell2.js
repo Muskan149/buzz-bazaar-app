@@ -216,7 +216,7 @@ const Sell2 = () => {
                 <legend htmlFor="product_image">Product Image</legend>
                 <div className="form-group">
                 <ImageUpload onPublicURLChange={handlePublicURLChange} />
-                {/* {publicURL && <img src={publicURL} alt="Uploaded" />} Show uploaded image */}
+                {publicURL && <img src={publicURL} alt="Uploaded" />}
                 </div>
             </fieldset>
 

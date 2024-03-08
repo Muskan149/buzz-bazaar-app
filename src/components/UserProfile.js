@@ -1,6 +1,5 @@
 import {React, useState, useEffect}from 'react';
 import { logout } from '../js/auth';
-import { supabase } from '../js/supabaseConfig.js'
 import useUserInfo from '../js/useUserInfo.js';  
 import ProductCard from './ProductCard.js';
 
