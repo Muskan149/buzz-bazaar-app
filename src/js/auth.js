@@ -1,20 +1,20 @@
 import { supabase } from './supabaseConfig.js';
 
 // Deciding the type of auth to perform: login or register
-export function performAuth() {
+export function performAuth(userPFP =  null) {
     const authButton = document.getElementById("authButton");
     if (authButton) {
         if (authButton.textContent.toLowerCase() == "register") {
-            register()
+            register(userPFP)
         } else {
-            login()
+            login(userPFP)
         }
     }
     
 }
 
 // Register function
-export async function register() {
+export async function register(userPFP) {
     const email = document.getElementById("userEmail").value;
     const password = document.getElementById("userPassword").value;
 
@@ -42,11 +42,19 @@ export async function register() {
     const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
         email: email,
         password: password,
-    }, { redirectTo: 'http://127.0.0.1:3413/' });
+    });
+
+    let authError = null;
+
+    // User exists, but is fake. See https://supabase.com/docs/reference/javascript/auth-signup
+    if (signUpData.user && signUpData.user.identities && signUpData.user.identities.length === 0) {
+        alert("User already exists")
+        return;
+    } 
 
 
     if (signUpData.user) { // If sign up with email and password is successful
-        alert("Registration succesfful! Check your inbox to confirm your email.")
+        alert("Registration succesfful! Check your inbox (and spam!) to confirm your email.")
         // Extract the user object from the signUpData
         const user = signUpData.user;
         console.log("here is the user data: " + Object.entries(signUpData))
@@ -65,7 +73,8 @@ export async function register() {
                     id: user.id,
                     display_name: firstName + " " + lastName,
                     contact_number: contactNumber, 
-                    email: email
+                    email: email,
+                    userPFP: userPFP ? userPFP : null
                 }
             ], { onConflict: ['id'] });
 
@@ -78,6 +87,7 @@ export async function register() {
         }
     } else {
         console.error("Error during registration:", signUpError.message);
+        alert("There was an error registering you: " + signUpError.message)
     }
 }
 

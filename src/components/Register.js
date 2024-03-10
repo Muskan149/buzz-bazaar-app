@@ -10,12 +10,16 @@ const Register = () => {
    const [showPassword, setShowPassword] = useState(false);
    const session = useContext(SessionContext);
 
-//    const [publicURL, setPublicURL] = useState(null);
+   const [publicURL, setPublicURL] = useState(null);
 
-//    const handlePublicURLChange = (url) => {
-//      setPublicURL(url);
-//      console.log(url)
-//    };
+   const handlePublicURLChange = (url) => {
+     setPublicURL(url);
+     console.log(url)
+   };
+
+   const handleAuth = () => {
+    performAuth(publicURL); // Pass publicURL to performAuth function
+  };
 
     return (
         <div>
@@ -50,6 +54,12 @@ const Register = () => {
                         <input type="tel" className="form-control" id="userContactNumber" placeholder="10-digit contact number" required/>
                     </div>
                     <br />
+                    {/* USER PFP */}
+                    {/* <div className="form-group">
+                        <label htmlFor="userEmail">Contact Number (optional)</label>
+                        <ImageUpload onPublicURLChange={handlePublicURLChange} />
+                    </div> */}
+                    <br />
                     {/* <div className="form-group">
                         <label htmlFor="userEmail">Profile Image (optional)</label>
                         <ImageUpload onPublicURLChange={handlePublicURLChange} />
@@ -66,7 +76,7 @@ const Register = () => {
                         </div>
                     </div>
                     <br />
-                    <button type="button" id="authButton" className="btn btn-primary auth-submit" onClick={performAuth}>Register</button>
+                    <button type="button" id="authButton" className="btn btn-primary auth-submit" onClick={handleAuth}>Register</button>
                     <br />
                     <label className="auth-alt">
                         Already registered? <Link to="/login">Login</Link>

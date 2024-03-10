@@ -23,6 +23,19 @@ const Sell2 = () => {
     });
 
 
+    const validatePrice = (price) => {
+    // Regular expression to match numeric values with decimals
+    const regex = /^\d*(\.\d+)?$/;
+
+    // Check if the price matches the regex
+    if (!regex.test(price)) {
+        return false; // Price is not valid
+    }
+
+    return true; // Price is valid
+    };
+
+
     const [publicURL, setPublicURL] = useState(null);
 
     const handlePublicURLChange = (url) => {
@@ -71,6 +84,10 @@ const Sell2 = () => {
         // Check if all required fields are filled
         const requiredFields = ['product_name', 'product_category', 'product_description', 'product_price', 'rendezvous'];
         const unfilledFields = requiredFields.filter(field => formData[field].length <= 0);
+
+        if (!validatePrice(formData["product_price"])) {
+            alert('Price must be a numeric value without symbols!');
+        }
                 
         // If any required field is not filled, display an error alert
         if (unfilledFields.length > 0) {
@@ -205,10 +222,11 @@ const Sell2 = () => {
             <fieldset>
                 <div className="name-and-description">
                     <legend htmlFor="product_description">Product Description</legend>
-                    <p className="help-block">Enter details of the product (for example: condition, age)</p>
+                    <p className="help-block">Enter details of the product (for example: condition, age, etc.)</p>
                 </div>
                 <div className="form-group">
-                    <textarea id="product_description" name="product_description" rows="4" cols="50" onChange={handleInputChange} required/>
+                    <textarea id="product_description" name="product_description" rows="4" cols="50" onChange={handleInputChange} required
+                    placeholder="White AirPods. Great condition, barely used (<2 months). Perfect for on-the-go listening with top-notch sound quality. "/>
                 </div>
             </fieldset>
 

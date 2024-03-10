@@ -55,7 +55,11 @@ const ProductCard = ({ data, toDelist }) => {
               <br />
               <p className="text mb-4 mb-md-0" style={{marginBottom: '2rem'}}>
                 Hand-over at: <span style={{ color: 'green' }}>{data["rendezvous"]}</span>
-            </p>
+              </p>
+              <br />
+              <p className="text mb-4 mb-md-0" style={{marginBottom: '2rem'}}>
+                <span style={{ fontWeight: 'bold', marginTop: '1rem' }}>Payment Method(s): </span> {data["payment_method"]}
+              </p>
             <br />
               <div className="mt-1 mb-0 text-muted">
                 <span style={{ color: 'grey' }} className="product-type">{data["product_category"]}</span>

@@ -10,7 +10,8 @@ const UserProfile = () => {
   const [userName, setUserName ] = useState("");
   const [userEmail, setUserEmail ] = useState("");
   const [userContact, setUserContact ] = useState("");
-
+  const [userPFP, setUserPFP ] = useState("");
+  
   // useEffect
   // if (userId && userInfo) {
   //     console.log("User info: " + Object.values(userInfo));
@@ -26,6 +27,7 @@ const UserProfile = () => {
         setUserName(userInfo.display_name);
         setUserEmail(userInfo.email);
         setUserContact(userInfo.contact_number);
+        setUserPFP(userInfo.userPFP);
     }
 
     if (userProductInfo) {
@@ -46,7 +48,7 @@ const UserProfile = () => {
             <div className="card mb-4">
               <div className="card-body text-center" id="user-profile">
                 <img
-                  src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp"
+                  src={userPFP}
                   alt="avatar"
                   className="rounded-circle img-fluid"
                   style={{ width: '150px' }}
