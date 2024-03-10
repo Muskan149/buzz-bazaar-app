@@ -55,10 +55,10 @@ const Register = () => {
                     </div>
                     <br />
                     {/* USER PFP */}
-                    {/* <div className="form-group">
+                    <div className="form-group">
                         <label htmlFor="userEmail">Contact Number (optional)</label>
                         <ImageUpload onPublicURLChange={handlePublicURLChange} />
-                    </div> */}
+                    </div>
                     <br />
                     {/* <div className="form-group">
                         <label htmlFor="userEmail">Profile Image (optional)</label>
