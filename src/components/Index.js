@@ -8,7 +8,7 @@ const Index = () => {
       <div className="heading-container">
         <h1 className="hero-heading bold-700">Buzz Bazaar</h1>
         <h2 className="hero-sub-heading bold-700 animated-gradient-2">
-          Your Friendly, Neighborhood Campus Marketplace
+          Your Friendly Neighborhood Campus Marketplace
         </h2>
       </div>
 
