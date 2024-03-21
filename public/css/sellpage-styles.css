@@ -11,47 +11,14 @@
     margin-top: 6px;
   }
 
-.sell
-input[type="text"]:not(#userPassword, #userFirstName, #userLastName, #userContactNumber),
-input[type="submit"],
-input[type="button"]
- {
-    display: inline;
-    outline: none;
-    /* min-width: 300px; */
-    width: 20%;
-    padding: 0.5rem 1.25rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border-radius: 6px;
+input[type="text"], textarea {
+  background-color: white;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  width: 100%;
 }
-
-
-.sell-form 
-input[type="text"]:not(#userPassword, #userFirstName, #userLastName, #userContactNumber),
-input[type="submit"],
-input[type="button"]
-textarea
- {
-    display: inline;
-    outline: none;
-    /* min-width: 300px; */
-    width: 100%;
-    /* padding: 0.5rem 1.25rem; */
-    font-size: 0.9rem;
-    font-weight: 500;
-    border-radius: 6px;
-}
-
-textarea {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border-radius: 6px;
-    background-color: var(--main-box-color);
-    width: 100%;
-}
-
 
 #sell-form {
     margin: auto;
