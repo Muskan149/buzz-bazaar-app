@@ -185,7 +185,7 @@ const Sell2 = () => {
             <fieldset>
                 <legend className='col-25' htmlFor="product_name">Product Name</legend>
                 <div className="form-group col-75">
-                    <input id="product_name" type="text" name="product_name" className="form-control" onChange={handleInputChange} required/>
+                    <input id="product_name" type="text" name="product_name" className="form-control" onChange={handleInputChange} />
                 </div>
             </fieldset>
 
@@ -194,43 +194,43 @@ const Sell2 = () => {
                 <div className="form-group col-75">
                     <div className="radio">
                         <label>
-                            <input type="radio" id="product_category" name="product_category" value="Electronics/Appliances" onChange={handleInputChange} required/>
+                            <input type="radio" id="product_category" name="product_category" value="Electronics/Appliances" onChange={handleInputChange} />
                             Electronics/Appliances
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="product_category" value="Clothing and Accessories" required onChange={handleInputChange}/>
+                            <input type="radio" name="product_category" value="Clothing and Accessories" onChange={handleInputChange}/>
                             Clothing and Accessories
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="product_category" value="Books" required onChange={handleInputChange}/>
+                            <input type="radio" name="product_category" value="Books" onChange={handleInputChange}/>
                             Books
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="product_category" value="Furniture and Home Decor" required onChange={handleInputChange}/>
+                            <input type="radio" name="product_category" value="Furniture and Home Decor" onChange={handleInputChange}/>
                             Furniture and Home Decor
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="product_category" value="Sports and Fitness" required onChange={handleInputChange}/>
+                            <input type="radio" name="product_category" value="Sports and Fitness" onChange={handleInputChange}/>
                             Sports and Fitness
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="product_category" value="Kitchen and Dining" required onChange={handleInputChange}/>
+                            <input type="radio" name="product_category" value="Kitchen and Dining"  onChange={handleInputChange}/>
                             Kitchen and Dining
                         </label>
                     </div>
                     <div class="radio">
                         <label>
-                            <input type="radio" name="product_category" value="Other" required onChange={handleInputChange}/>
+                            <input type="radio" name="product_category" value="Other"  onChange={handleInputChange}/>
                             Other
                         </label>
                     </div>
@@ -243,7 +243,7 @@ const Sell2 = () => {
                     <p className="help-block">Enter details of the product (for example: condition, age, etc.)</p>
                 </div>
                 <div className="form-group col-75">
-                <textarea id="product_description" name="product_description" onChange={handleInputChange} maxLength="250" required
+                <textarea id="product_description" name="product_description" onChange={handleInputChange} maxLength="250"
                         placeholder="White AirPods. Great condition, barely used (<2 months). Perfect for on-the-go listening with top-notch sound quality. "/>
                     <div className="character-count">{characterCount}/250</div>
                 </div>
@@ -269,7 +269,7 @@ const Sell2 = () => {
             <fieldset>
                 <legend className='col-25' htmlFor="product_price">Price (in $)</legend>
                 <div className="form-group col-75">
-                    <input id="product_price" type="text" name="product_price" className="form-control" required onChange={handleInputChange}/>
+                    <input id="product_price" type="text" name="product_price" className="form-control" onChange={handleInputChange}/>
                     <div id="price-error-message"></div> 
                 </div>
             </fieldset>
@@ -280,13 +280,13 @@ const Sell2 = () => {
                 <div className="form-group col-75">
                     <div className="radio">
                         <label>
-                            <input type="radio" name="price_negotiable" value="Yes" onChange={handleInputChange} required/>
+                            <input type="radio" name="price_negotiable" value="Yes" onChange={handleInputChange} />
                             Yes
                         </label>
                     </div>
                     <div className="radio">
                         <label>
-                            <input type="radio" name="price_negotiable" value="No" onChange={handleInputChange} required/>
+                            <input type="radio" name="price_negotiable" value="No" onChange={handleInputChange}/>
                             No
                         </label>
                     </div>
@@ -329,7 +329,7 @@ const Sell2 = () => {
             <fieldset>
                 <legend className='col-25' htmlFor="hand_over_spot">Where do you prefer to meet and hand over the product?</legend>
                 <div className="form-group col-75">
-                    <input id="hand_over_spot" type="text" name="hand_over_spot" className="form-control" required onChange={handleInputChange}/>
+                    <input id="hand_over_spot" type="text" name="hand_over_spot" className="form-control" onChange={handleInputChange}/>
                 </div>
             </fieldset>
             <button type="submit" id="sell-submit-button" className="btn btn-primary">Submit</button>
