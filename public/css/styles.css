@@ -237,6 +237,14 @@ textarea {
 
 }
 
+.character-count {
+    font-size: 12px; /* Adjust font size as needed */
+    color: #666; /* Adjust color as needed */
+    margin-top: 5px; /* Adjust margin top as needed */
+    text-align: right; /* Align the text to the right */
+}
+
+
 
 input[type="text"]:not(#userPassword, #userFirstName, #userLastName, #userContactNumber) {
     margin: 0.5rem auto 0.4rem;
@@ -257,6 +265,20 @@ input[type="submit"]:hover, input[type="button"]:hover{
     transition: 5ms;
 }
 
+.img-preview {
+    height: 200px;
+    width: auto;
+}
+
+.call-label {
+    background: #5e8c6a; 
+    padding-bottom: 0.1rem;
+}
+
+.call-span {
+    font-size: 0.75rem;
+    color: #eee;
+}
 
 main {
     text-align: center;
@@ -711,4 +733,40 @@ h3 {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-upload-section {
+    display: flex;
+    align-items: center;
+}
+
+.image-carousel {
+    display: flex;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.img-preview {
+    width: 200px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.img-delete-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }

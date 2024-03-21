@@ -1,8 +1,7 @@
-// TODO: Add user Profile details to the insert command query
 import React, { useContext, useEffect, useState } from 'react';
 import { supabase } from '../js/supabaseConfig.js'
 import useUserInfo from '../js/useUserInfo.js';  
-import ImageUpload from './ImageUpload.js';
+import ImageUploads from './ImageUploads.js';
 
 const Sell2 = () => {
     const { user, userId, userInfo } = useUserInfo();
@@ -19,7 +18,7 @@ const Sell2 = () => {
         product_image: '',
         product_price: '',
         price_negotiable: '',
-        rendezvous: '',
+        hand_over_spot: '',
     });
 
 
@@ -36,55 +35,107 @@ const Sell2 = () => {
     };
 
 
-    const [publicURL, setPublicURL] = useState(null);
+    const [URLList, setURLList] = useState(null);
 
-    const handlePublicURLChange = (url) => {
-      setPublicURL(url);
-      console.log(url)
+    const handleURLListChange = (urlList) => {
+        if (URLList) {
+            setURLList(urlList.concat(URLList))
+        } else {
+            setURLList(urlList);
+        }
     };
 
+    const handleDeleteClick = () => {
+        setURLList(null);
+    };
+
+    const [characterCount, setCharacterCount] = useState(0);
 
     // handle in
     const handleInputChange = (event) => {
         console.log("we reached the handle stage")
         const { name, value } = event.target;
+        const submitButton = document.getElementById("sell-submit-button");
+        if (name === 'product_price') {
+            setCharacterCount(value.length);
+
+            const priceInput = event.target.value;
+            const priceRegex = /^\d+(\.\d{1,2})?$/;
+        
+            if (!priceRegex.test(priceInput) && priceInput.length > 0) {
+                const errorMessage = document.getElementById("price-error-message");
+                if (errorMessage) {
+                    errorMessage.textContent = "Invalid Price amount. Must contain at most 2 decimal places and no non-numeric symbols.";
+                    errorMessage.style.color = "red";
+                }
+                submitButton.disabled = true; // Disable the submit button
+            } else {
+                const errorMessage = document.getElementById("price-error-message");
+                if (errorMessage) {
+                    errorMessage.textContent = "";
+                }
+                submitButton.disabled = false; // Enable the submit button
+            }
+        }
         console.log("name: " + name)
         console.log("value: " + value)
         setFormData({ ...formData, [name]: value });
+        if (name === 'product_description') {
+            setCharacterCount(value.length);
+        }
     };
 
-    const listToString = () => {
-        const checkboxes = document.querySelectorAll('input[name="payment-method"]:checked');
-        const checkedCheckboxes = Array.from(checkboxes).map((checkbox) => checkbox.value).join(', ');
-        return checkedCheckboxes;
+    const [selectedPaymentMethods, setSelectedPaymentMethods] = useState([]);
+
+    // Function to handle checkbox change
+    const handleCheckboxChange = (event) => {
+        const { value, checked } = event.target;
+        if (checked) {
+            // Add to selectedPaymentMethods if checked
+            setSelectedPaymentMethods(prevState => [...prevState, value]);
+        } else {
+            // Remove from selectedPaymentMethods if unchecked
+            setSelectedPaymentMethods(prevState => prevState.filter(method => method !== value));
+        }
     };
+
+    // // Function to convert selectedPaymentMethods to string
+    // const listToString = () => {
+    //     return 
+    // };
 
     const submitForm = async (e) => {
+        e.preventDefault()
 
         // Check if all required fields are filled
-        const requiredFields = ['product_name', 'product_category', 'product_description', 'product_price', 'rendezvous'];
+        const requiredFields = ['product_name', 'product_category', 'product_description', 'product_price', 'hand_over_spot'];
         const unfilledFields = requiredFields.filter(field => formData[field].length <= 0);
 
         if (!validatePrice(formData["product_price"])) {
             alert('Price must be a numeric value without symbols!');
+            return; // Prevent form submission
         }
-                
+
         // If any required field is not filled, display an error alert
         if (unfilledFields.length > 0) {
             alert(`Please fill the following required fields: ${unfilledFields.join(', ')}`);
             return; // Prevent form submission
         }
 
-        if (publicURL == null) {
+        console.log("still got out of here")
+
+        if (URLList == null) {
+            console.log("bruh")
             alert(`Please upload at least 1 product image`);
             return; // Prevent form submission
         }
 
-        e.preventDefault()
+        console.log("still got out of here")
+
         console.log(userId)
-        const payment_method = listToString();
+        const payment_method = selectedPaymentMethods.join(', ');
         console.log(payment_method)
-        const { product_name, product_category, product_description, product_image, product_price, price_negotiable, rendezvous } = formData;
+        const { product_name, product_category, product_description, product_image, product_price, price_negotiable, hand_over_spot } = formData;
         console.log(Object.entries(formData))
         console.log("Submitting this id: " + userId)
         console.log("This is the userInfo: " + userInfo["0"])
@@ -102,10 +153,10 @@ const Sell2 = () => {
                     product_name: product_name,
                     product_category: product_category,
                     product_description: product_description,
-                    product_image: publicURL,
+                    product_image: URLList.join(" , "),
                     product_price: product_price,
                     payment_method: payment_method,
-                    rendezvous: rendezvous,
+                    rendezvous: hand_over_spot,
                 },
             ])
             .select();
@@ -120,7 +171,7 @@ const Sell2 = () => {
     };
 
     return (
-        <form id="sell-form" autoComplete="off">
+        <form id="sell-form" autoComplete="off" onSubmit={submitForm}>
             <fieldset className="sell-heading-fieldset">
                 <label>
                     Need to sell your old stuff out? Buzz Bazaar harnesses the strength of your campus community to connect you with eager buyers for your books, furniture, electronics, and more!
@@ -205,16 +256,26 @@ const Sell2 = () => {
                     <p className="help-block">Enter details of the product (for example: condition, age, etc.)</p>
                 </div>
                 <div className="form-group">
-                    <textarea id="product_description" name="product_description" rows="4" cols="50" onChange={handleInputChange} required
-                    placeholder="White AirPods. Great condition, barely used (<2 months). Perfect for on-the-go listening with top-notch sound quality. "/>
+                <textarea id="product_description" name="product_description" rows="4" cols="50" onChange={handleInputChange} maxLength="250" required
+                        placeholder="White AirPods. Great condition, barely used (<2 months). Perfect for on-the-go listening with top-notch sound quality. "/>
+                    <div className="character-count">{characterCount}/250</div>
                 </div>
             </fieldset>
 
             <fieldset>
                 <legend htmlFor="product_image">Product Image</legend>
                 <div className="form-group">
-                <ImageUpload onPublicURLChange={handlePublicURLChange} />
-                {publicURL && <img src={publicURL} alt="Uploaded" />}
+                <div className="image-upload-section">
+                <ImageUploads onURLListChange={handleURLListChange} />
+                {URLList && (
+                    <button class ="img-delete-button" onClick={handleDeleteClick}>Delete Images</button>
+                )}
+                </div>
+                <div className="image-carousel">
+                {URLList && URLList.map((url, index) => (
+                    <img key={index} className="img-preview" src={url} alt="Uploaded" />
+                ))}
+                </div>                
                 </div>
             </fieldset>
 
@@ -229,8 +290,10 @@ const Sell2 = () => {
                 <legend htmlFor="product_price">Price (in $)</legend>
                 <div className="form-group">
                     <input id="product_price" type="text" name="product_price" className="form-control" required onChange={handleInputChange}/>
+                    <div id="price-error-message"></div> 
                 </div>
             </fieldset>
+
 
             <fieldset>
                 <legend htmlFor="price_negotiable">Is the price negotiable?</legend>
@@ -259,37 +322,37 @@ const Sell2 = () => {
                 <div className="form-group">
                     <div className="checkbox">
                         <label>
-                            <input type="checkbox" name="payment-method" value="PayPal" required />
+                            <input type="checkbox" name="payment-method" value="PayPal" onChange={handleCheckboxChange}/>
                             PayPal
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="payment-method" value="Venmo" required/>
+                            <input type="checkbox" name="payment-method" value="Venmo" onChange={handleCheckboxChange}/>
                             Venmo
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="payment-method" value="Zelle" required/>
+                            <input type="checkbox" name="payment-method" value="Zelle" onChange={handleCheckboxChange}/>
                             Zelle
                         </label>
                     </div>
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="payment-method" value="Cash" required/>
+                            <input type="checkbox" name="payment-method" value="Cash" onChange={handleCheckboxChange}/>
                             Cash
                         </label>
                     </div>
                 </div>
             </fieldset>
             <fieldset>
-                <legend htmlFor="rendezvous">Where do you prefer to meet and hand over the product?</legend>
+                <legend htmlFor="hand_over_spot">Where do you prefer to meet and hand over the product?</legend>
                 <div className="form-group">
-                    <input id="rendezvous" type="text" name="rendezvous" className="form-control" required onChange={handleInputChange}/>
+                    <input id="hand_over_spot" type="text" name="hand_over_spot" className="form-control" required onChange={handleInputChange}/>
                 </div>
             </fieldset>
-            <button type="submit" className="btn btn-primary" onClick={submitForm}>Submit</button>
+            <button type="submit" id="sell-submit-button" className="btn btn-primary">Submit</button>
         </form>
     );
 };

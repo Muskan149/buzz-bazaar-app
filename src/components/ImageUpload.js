@@ -6,7 +6,7 @@ const fileTypes = ["JPEG", "JPG", "PNG", "GIF"];
 
 const ImageUpload = ({ onPublicURLChange }) => {
   const [file, setFile] = useState(null);
-
+  
   const handleChange = async (file) => {
     const { data, error } = await supabase.storage
       .from("images")
@@ -14,8 +14,10 @@ const ImageUpload = ({ onPublicURLChange }) => {
     if (data) {
       console.log(data);
     } else {
-      console.log(error);
-      alert('Error uploading image. Please try again.');
+      console.log(error["error"])
+      if (!(error["error"] == "Duplicate")) {
+        alert('Error uploading image. Please try again.');
+      }
     }    
 
     const { data: publicURL } = supabase
@@ -32,7 +34,6 @@ const ImageUpload = ({ onPublicURLChange }) => {
     handleChange={(file) => handleChange(file)}
     name="image"
     types={fileTypes}
-    // multiple = {true}
   />
   );
   }

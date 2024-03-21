@@ -27,7 +27,12 @@ const UserProfile = () => {
         setUserName(userInfo.display_name);
         setUserEmail(userInfo.email);
         setUserContact(userInfo.contact_number);
-        setUserPFP(userInfo.userPFP);
+        if (userInfo.userPFP) { 
+          setUserPFP(userInfo.userPFP); 
+        } 
+        else {
+          setUserPFP("/img/person-circle.svg");
+        }        
     }
 
     if (userProductInfo) {
@@ -51,7 +56,7 @@ const UserProfile = () => {
                   src={userPFP}
                   alt="avatar"
                   className="rounded-circle img-fluid"
-                  style={{ width: '150px' }}
+                  style={{ width: '150px', fill: "#5E8C6A"}}
                 />
                 <h5 className="my-3">{ userName }</h5>
                 <span><a href={'tel:' + userContact}>

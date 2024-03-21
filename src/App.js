@@ -5,6 +5,8 @@ import Index from './components/Index';
 import Buy from './components/Buy';
 import Sell2 from './components/Sell2';
 import ImageUpload from './components/ImageUpload.js';
+import ImageUploads from './components/ImageUploads.js';
+import ImagesDemo from './components/ImagesDemo.js';
 import UserProfile from './components/UserProfile';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -34,7 +36,8 @@ const App = () => {
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/buy" element={<Buy />} />
-        <Route path="/image" element={<ImageUpload />} /> 
+        <Route path="/image" element={<ImageUploads />} /> 
+        <Route path="/images" element={<ImagesDemo />} /> 
         <Route path="/sell" element={session ? <Sell2 /> : <Login/>} /> 
         {/* todo: why is navigate to not working here */}
         <Route path="/userProfile" element={session ? <UserProfile /> : <Navigate to = "/"/> } />

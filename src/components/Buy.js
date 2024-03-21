@@ -37,10 +37,11 @@ const Buy = () => {
       const cardBodies = document.getElementsByClassName('row justify-content-center mb-3');
       const productTypes = document.getElementsByClassName('product-type');
       const productNames = document.getElementsByClassName('product-name');
+      const productDescriptions =  document.getElementsByClassName("product-description");
 
       if (input.length > 0 && selectedCategories.length > 0) {
         for (let i = 0; i < cardBodies.length; i++) {
-          if (selectedCategories.includes(productTypes[i].textContent) && productNames[i].innerHTML.toLowerCase().includes(input)) {
+          if (selectedCategories.includes(productTypes[i].textContent) && (productNames[i].innerHTML.toLowerCase().includes(input) || productDescriptions[i].innerHTML.toLowerCase().includes(input))) {
             cardBodies[i].style.display = "flex";
           } else {
             cardBodies[i].style.display = "none";
@@ -53,7 +54,7 @@ const Buy = () => {
       } else {
         if (input.length > 0) {
           for (let i = 0; i < cardBodies.length; i++) {
-            if (productNames[i].innerHTML.toLowerCase().includes(input)) {
+            if (productNames[i].innerHTML.toLowerCase().includes(input) || productDescriptions[i].innerHTML.toLowerCase().includes(input)) {
               cardBodies[i].style.display = "flex";
             } else {
               cardBodies[i].style.display = "none";

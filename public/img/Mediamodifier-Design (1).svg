@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1080" height="1080" viewBox="0 0 1080 1080" xml:space="preserve">
+<desc>Created with Fabric.js 5.2.4</desc>
+<defs>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
+<g transform="matrix(1 0 0 1 540 540)" id="c3d0691d-dddb-4c9f-851d-2e3af6f2d837"  >
+<rect style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;" vector-effect="non-scaling-stroke"  x="-540" y="-540" rx="0" ry="0" width="1080" height="1080" />
+</g>
+<g transform="matrix(1 0 0 1 540 540)" id="6b371d11-6520-4a6f-bfac-d65c48df6b4f"  >
+</g>
+<g transform="matrix(1 0 0 1 17.85 17.85)"  >
+<g style="" vector-effect="non-scaling-stroke"   >
+		<g transform="matrix(1 0 0 1 0 -2)"  >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(94,140,106); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-8, -6)" d="M 11 6 C 11 7.656854249492381 9.65685424949238 9 8 9 C 6.343145750507619 9 5 7.656854249492381 5 6 C 5 4.343145750507619 6.343145750507619 3 8 3 C 9.65685424949238 3 11 4.3431457505076185 11 5.999999999999999" stroke-linecap="round" />
+</g>
+		<g transform="matrix(1 0 0 1 0 0)"  >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(94,140,106); fill-rule: evenodd; opacity: 1;" vector-effect="non-scaling-stroke"  transform=" translate(-8, -8)" d="M 0 8 C 0 3.5817220013536524 3.5817220013536524 0 8 0 C 12.418277998646348 0 15.999999999999998 3.5817220013536506 16 7.999999999999998 C 16 12.418277998646348 12.418277998646348 16 8 16 C 3.5817220013536524 16 0 12.418277998646348 0 8 M 8 1 C 5.3098934409766585 1.0001432264006824 2.8578587213260684 2.5418663010748657 1.691964096390178 4.966193639319394 C 0.5260694714542877 7.390520977563924 0.8526048991023147 10.268499247086726 2.532 12.37 C 3.242 11.226 4.805 10 8 10 C 11.195 10 12.757 11.225 13.468 12.370000000000001 C 15.147395100897686 10.268499247086728 15.473930528545711 7.390520977563923 14.30803590360982 4.9661936393193935 C 13.14214127867393 2.541866301074865 10.690106559023342 1.0001432264006809 8 1" stroke-linecap="round" />
+</g>
+</g>
+</g>
+<g transform="matrix(NaN NaN NaN NaN 0 0)"  >
+<g style=""   >
+</g>
+</g>
+<g transform="matrix(NaN NaN NaN NaN 0 0)"  >
+<g style=""   >
+</g>
+</g>
+</svg>

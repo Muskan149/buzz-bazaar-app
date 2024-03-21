@@ -83,7 +83,8 @@ export async function register(userPFP) {
             // Handle the error as needed
         } else {
             console.log("User profile updated successfully");
-            // Additional logic after successful registration and profile update
+            // Redirect user to /index
+            window.location.href = "/index";
         }
     } else {
         console.error("Error during registration:", signUpError.message);
@@ -100,7 +101,7 @@ export async function login() {
     // Define the regular expression for email ending with @gatech.edu
     var regex = /@gatech\.edu$/;
 
-    var emailCheck = true;
+    var emailCheck = false;
 
     if (emailCheck) {
             // Test the email against the regular expression

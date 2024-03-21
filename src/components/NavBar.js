@@ -3,11 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 
 const NavBar = ({ session }) => {
   const location = useLocation();
-
   return (
     <header>
       <Link to="/index">
-        <img src="/img/logo.jpeg" style={{ height: '65px', width: 'auto' }} alt="Logo" />
+        <img src="/img/buzzbazaar_logo.png" style={{ height: '65px', width: 'auto' }} alt="Logo" />
       </Link>
       <nav>
         <ul>
