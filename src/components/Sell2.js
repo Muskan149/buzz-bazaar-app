@@ -59,26 +59,6 @@ const Sell2 = () => {
         return checkedCheckboxes;
     };
 
-    const handleSubmit2 = async (e) => {
-        e.preventDefault();
-        let { data: product_info, error } = await supabase
-        .from('product_info')
-        .select('*')
-
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(product_info)
-        }
-    }
-
-  
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(Object.entries(formData))
-    }
-
     const submitForm = async (e) => {
 
         // Check if all required fields are filled

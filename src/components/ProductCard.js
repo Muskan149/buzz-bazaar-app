@@ -80,7 +80,7 @@ const ProductCard = ({ data, toDelist }) => {
                     <div class="d-flex flex-column mt-4">
                       {session ? (
                         <a href={`tel:${data["contact_number"]}`} target="_blank">
-                          <button className="btn btn-primary btn-sm" type="button" style={{ width: '100%' }}>Call</button>
+                          <button className="btn btn-primary btn-sm" type="button" style={{ width: '100%' }}>{data["contact_number"]}</button>
                         </a>
                       ) : (
                         <button className="btn btn-primary btn-sm" type="button" style={{ width: '100%' }} onClick={loginAlert}>Call</button>
