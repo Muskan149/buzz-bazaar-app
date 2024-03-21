@@ -189,7 +189,7 @@ const Sell2 = () => {
                 </div>
             </fieldset>
 
-            {/* <fieldset>
+            <fieldset>
                 <legend className='col-25' htmlFor="product_category">Product Category</legend>
                 <div className="form-group col-75">
                     <div className="radio">
@@ -235,7 +235,7 @@ const Sell2 = () => {
                         </label>
                     </div>
                 </div>
-            </fieldset> */}
+            </fieldset>
 
             <fieldset>
                 <div className="col-25 name-and-description">
