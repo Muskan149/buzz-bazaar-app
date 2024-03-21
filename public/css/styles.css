@@ -52,7 +52,8 @@ body {
     /* font-family: "Pangolin", system-ui, sans-serif; */
     /* font-family: roboto, "Helvetica Neue", Helvetica, Arial, sans-serif; */
     /* font-family: 'Open Sans', sans-serif; */
-    font-family: Poppins,sans-serif;
+    /* font-family: Poppins,sans-serif; */
+    font-family: Jost,sans-serif;
     letter-spacing: 0.1px;
     word-spacing: 1px;
     line-height: 1.5;
@@ -200,20 +201,6 @@ body {
     color: black;
 }
 
-input[type="text"]:not(#userPassword, #userFirstName, #userLastName, #userContactNumber),
-input[type="submit"],
-input[type="button"]
- {
-    display: inline;
-    outline: none;
-    /* min-width: 300px; */
-    width: 20%;
-    padding: 0.5rem 1.25rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border-radius: 6px;
-}
-
 button {
     outline: none;
     /* min-width: 300px; */
@@ -227,15 +214,7 @@ button {
     color: #f0ffff;
 }
 
-textarea {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.9rem;
-    font-weight: 500;
-    border-radius: 6px;
-    background-color: var(--main-box-color);
-    width: auto;
 
-}
 
 .character-count {
     font-size: 12px; /* Adjust font size as needed */
@@ -614,88 +593,6 @@ h3 {
     border: 2px solid #4CAF50; /* Green border color */
     border-radius: 3px;
 }
-
-
-#sell-form {
-    margin: auto;
-    width: 65%;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-#sell-form fieldset legend {
-    display: inline;
-    margin-right: 2rem;
-    text-align: left;
-    margin-bottom: unset;
-    width: unset !important
-  }
-  
-  #sell-form fieldset .form-group {
-    display: inline-block;
-    font-size: 1rem;
-  }
-  
-  #sell-form fieldset .form-group input {
-    width: 100%; /* Adjust as needed */
-    font-size: 1rem;
-  }
-
-  fieldset:has(legend) {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  .sell-heading {
-    font-size: 2.5rem;
-    margin-bottom: 2rem !important;
-  }
-
-  .sell-heading-fieldset label {
-    padding: 1rem;
-    font-size: 1.5rem;
-    background-color: rgb(94, 140, 106, 0.5) ;
-    margin-bottom: -0.5rem;
-  }
-
-  .sell-subsection{
-    text-decoration: solid;
-    font-weight: 700;
-    margin: 2rem auto 1rem;
-    text-align: center;
-    color: #5e8c6a;
-  }
-
-  .name-and-description {
-    display: flex;
-    width: min-content;
-    flex-direction: column;
-    margin-right: 2rem;
-  }
-
-
-.radio label, .checkbox label {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.radio label input, .checkbox label input {
-    width: auto !important;
-}
-
-  .form-group:has(.radio), .form-group:has(.checkbox){
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 2rem;
-  }
 
   .login-main {
     text-align: left;

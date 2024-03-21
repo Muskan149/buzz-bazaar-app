@@ -1,0 +1,143 @@
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+
+.sell
+input[type="text"]:not(#userPassword, #userFirstName, #userLastName, #userContactNumber),
+input[type="submit"],
+input[type="button"]
+ {
+    display: inline;
+    outline: none;
+    /* min-width: 300px; */
+    width: 20%;
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+
+.sell-form 
+input[type="text"]:not(#userPassword, #userFirstName, #userLastName, #userContactNumber),
+input[type="submit"],
+input[type="button"]
+textarea
+ {
+    display: inline;
+    outline: none;
+    /* min-width: 300px; */
+    width: 100%;
+    /* padding: 0.5rem 1.25rem; */
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+}
+
+textarea {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    background-color: var(--main-box-color);
+    width: 100%;
+}
+
+
+#sell-form {
+    margin: auto;
+    width: 65%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+  
+
+  .form-group {
+    width: 100%;
+  }
+
+
+  fieldset{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .sell-heading {
+    font-size: 2.5rem;
+    margin-bottom: 2rem !important;
+  }
+
+  .sell-heading-fieldset label {
+    padding: 1rem;
+    font-size: 1.5rem;
+    background-color: rgb(94, 140, 106, 0.5) ;
+    margin-bottom: -0.5rem;
+  }
+
+  .sell-subsection{
+    text-decoration: solid;
+    font-weight: 700;
+    margin: 2rem auto 1rem;
+    text-align: center;
+    color: #5e8c6a;
+  }
+
+  .name-and-description {
+    display: flex;
+    /* width: min-content; */
+    flex-direction: column;
+  }
+
+
+.radio label, .checkbox label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.radio label input, .checkbox label input {
+    width: auto !important;
+}
+
+  .form-group:has(.radio), .form-group:has(.checkbox){
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+  }
+
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 900px) {
+    fieldset {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .col-25 , .col-75{
+        width: 100%;
+    }
+    
+    .name-and-description {
+        width: 100%;
+    }
+
+    .checkboxes {
+        text-align: center;
+    }
+}
