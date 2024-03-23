@@ -594,7 +594,7 @@ h3 {
   }
 
   .login-main .form-group label:not(.form-check-label), h1 {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--main-green);
   }
 

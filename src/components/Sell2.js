@@ -183,14 +183,14 @@ const Sell2 = () => {
             </fieldset>
 
             <fieldset>
-                <legend className='col-25' htmlFor="product_name">Product Name</legend>
+                <legend className='col-25' htmlFor="product_name">Product Name<span class="required"/> </legend>
                 <div className="form-group col-75">
                     <input id="product_name" type="text" name="product_name" className="form-control" onChange={handleInputChange} />
                 </div>
             </fieldset>
 
             <fieldset>
-                <legend className='col-25' htmlFor="product_category">Product Category</legend>
+                <legend className='col-25' htmlFor="product_category">Product Category<span class="required"/></legend>
                 <div className="form-group col-75">
                     <div className="radio">
                         <label>
@@ -239,7 +239,7 @@ const Sell2 = () => {
 
             <fieldset>
                 <div className="col-25 name-and-description">
-                    <legend htmlFor="product_description">Product Description</legend>
+                    <legend htmlFor="product_description">Product Description<span class="required"/></legend>
                     <p className="help-block">Enter details of the product (for example: condition, age, etc.)</p>
                 </div>
                 <div className="form-group col-75">
@@ -250,7 +250,7 @@ const Sell2 = () => {
             </fieldset>
 
             <fieldset>
-                <legend className='col-25' htmlFor="product_image">Product Image</legend>
+                <legend className='col-25' htmlFor="product_image">Product Image<span class="required"/></legend>
                 <div className="form-group col-75">
                 <div className="image-upload-section">
                 <ImageUploads onURLListChange={handleURLListChange} />
@@ -267,7 +267,7 @@ const Sell2 = () => {
             </fieldset>
 
             <fieldset>
-                <legend className='col-25' htmlFor="product_price">Price (in $)</legend>
+                <legend className='col-25' htmlFor="product_price">Price (in $)<span class="required"/></legend>
                 <div className="form-group col-75">
                     <input id="product_price" type="text" name="product_price" className="form-control" onChange={handleInputChange}/>
                     <div id="price-error-message"></div> 
@@ -276,7 +276,7 @@ const Sell2 = () => {
 
 
             <fieldset>
-                <legend className='col-25' htmlFor="price_negotiable">Is the price negotiable?</legend>
+                <legend className='col-25' htmlFor="price_negotiable">Is the price negotiable?<span class="required"/></legend>
                 <div className="form-group col-75">
                     <div className="radio">
                         <label>
@@ -298,7 +298,7 @@ const Sell2 = () => {
             </fieldset>
 
             <fieldset>
-                <legend className='col-25' htmlFor="payment-method" >Preferred Payment Methods</legend>
+                <legend className='col-25' htmlFor="payment-method" >Preferred Payment Methods<span class="required"/></legend>
                 <div className="checkboxes form-group col-75">
                     <div className="checkbox">
                         <label>
@@ -327,7 +327,7 @@ const Sell2 = () => {
                 </div>
             </fieldset>
             <fieldset>
-                <legend className='col-25' htmlFor="hand_over_spot">Where do you prefer to meet and hand over the product?</legend>
+                <legend className='col-25' htmlFor="hand_over_spot">Where do you prefer to meet and hand over the product?<span class="required"/></legend>
                 <div className="form-group col-75">
                     <input id="hand_over_spot" type="text" name="hand_over_spot" className="form-control" onChange={handleInputChange}/>
                 </div>

@@ -21,15 +21,15 @@ const Index = () => {
           <div className="feature-content">
             <p>
               College-shopping burning a hole in your pocket? We got you! Buzz
-              Bazaar connects you with legitimate sellers of second-hand books,
-              furniture, electricals, etc. in the campus.
+              Bazaar connects you with legitimate resellers of books,
+              furniture, electricals, etc. on campus.
             </p>
           </div>
         </div>
         <div className="feature">
           <h3 className="feature-heading bold-700">
             <i className="fa-solid fa-plane-departure" aria-hidden="true"></i>
-            How it works: Selling on Buzz Bazaar
+            Selling on Buzz Bazaar
           </h3>
           <div className="feature-content">
             <p>
@@ -41,7 +41,7 @@ const Index = () => {
         <div className="feature">
           <h3 className="feature-heading bold-700">
             <i className="fa-solid fa-cart-shopping"></i>
-            How it works: Buying on Buzz Bazaar
+            Buying on Buzz Bazaar
           </h3>
           <div className="feature-content">
             <p>

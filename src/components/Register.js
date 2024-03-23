@@ -28,35 +28,35 @@ const Register = () => {
             <div className="login-main">
                 <form>
                 <div className="form-group">
-                        <label htmlFor="userEmail" required>GT Email address (..@gatech.edu)</label>
+                        <label htmlFor="userEmail" className='required' required>GT Email address (..@gatech.edu)</label>
                         <input type="email" className="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="example@gatech.edu" required/>
                 </div>
                 <br />
                 <div className="form-group">
-                        <label htmlFor="userPassword">Password</label>
+                        <label htmlFor="userPassword" className='required'>Password</label>
                         <div className="password-container">
                             <input type={showPassword ? "text" : "password"} className="form-control" id="userPassword" placeholder="Password" />
                         </div>
                 </div>
                 <br />
                 <div className="form-group">
-                    <label htmlFor="userFirstName" required>First Name</label>
+                    <label htmlFor="userFirstName" className='required' required>First Name</label>
                     <input type="text" className="form-control" id="userFirstName" placeholder="Your First Name" required/>
                 </div>
                     <br />
                 <div className="form-group">
-                    <label htmlFor="userLastName" required>Last Name</label>
+                    <label htmlFor="userLastName" className='required' required>Last Name</label>
                     <input type="text" className="form-control" id="userLastName" placeholder="Your Last Name" required/>
                     </div>
                     <br />
                     <div className="form-group">
-                        <label htmlFor="userEmail">Contact Number (optional)</label>
+                        <label htmlFor="userEmail">Contact Number</label>
                         <input type="tel" className="form-control" id="userContactNumber" placeholder="10-digit contact number" required/>
                     </div>
                     <br />
                     {/* USER PFP */}
                     <div className="form-group">
-                        <label htmlFor="userEmail">Your PFP (optional)</label>
+                        <label htmlFor="userEmail">Your PFP</label>
                         <ImageUpload onPublicURLChange={handlePublicURLChange} />
                     </div>
                     <br />
@@ -68,7 +68,7 @@ const Register = () => {
                     <div className="checkbox-horizontal-flex">
                         <div className="form-group form-check">
                             <input type="checkbox" className="form-check-input" id="showPassword" onChange={() => setShowPassword(!showPassword)} />
-                            <label className="form-check-label" htmlFor="showPassword">Show Password</label>
+                            <label className="form-check-label" htmlFor="showPassword" >Show Password</label>
                         </div>
                         <div className="form-group form-check">
                             <input type="checkbox" className="form-check-input" id="rememberMe" />

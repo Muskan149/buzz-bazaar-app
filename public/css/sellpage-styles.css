@@ -11,6 +11,15 @@
     margin-top: 6px;
   }
 
+.required::after {
+    content: "*";
+    color: red;
+    /* font-size: 0.9rem; */
+    margin-left: 0.2em; /* Adjust as needed */
+    margin-bottom: 0.2em; /* Adjust as needed */
+
+}
+
 input[type="text"], textarea {
   background-color: white;
   padding: 0.5rem 1.25rem;
