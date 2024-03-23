@@ -58,7 +58,7 @@ import { supabase } from '../js/supabaseConfig.js'
 const fileTypes = ["JPEG", "JPG", "PNG", "GIF"];
 
 const ImageUpload = ({ onPublicURLChange }) => {
-  const [file, setFile] = useState(null);
+  const [URL, setURL] = useState(null);
   
   const handleChange = async (file) => {
     console.log("file change detected")
@@ -80,15 +80,29 @@ const ImageUpload = ({ onPublicURLChange }) => {
     .getPublicUrl(`./${file.name}`)
     
     console.log(publicURL.publicUrl)
+    setURL(publicURL.publicUrl)
     onPublicURLChange(publicURL.publicUrl); // Pass publicURL back to parent component
-}
+  }
+
+    const handleDeleteClick = () => {
+      setURL(null)
+    };
 
   return (
+    <>
+    <div className="image-upload-section">
     <FileUploader
     handleChange={(file) => handleChange(file)}
     name="image"
     types={fileTypes}
-  />
+    />
+    {URL && ( <button class ="img-delete-button" onClick={handleDeleteClick}>Delete Images</button>)}
+    </div>
+    <div className="image-carousel">
+    {URL && <img className="img-preview" src={URL} alt="Uploaded" />}
+    </div>
+  </>
+    
   );
   }
 

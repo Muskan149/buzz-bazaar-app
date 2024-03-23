@@ -39,7 +39,7 @@ input[type="text"], textarea {
 }
   
 
-  .form-group {
+#sell-form .form-group {
     width: 100%;
   }
 
@@ -78,7 +78,7 @@ input[type="text"], textarea {
   }
 
 
-.radio label, .checkbox label {
+#sell-form .radio label, .checkbox label {
     display: flex;
     flex-direction: row;
     align-items: center;
