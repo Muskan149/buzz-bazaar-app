@@ -38,7 +38,7 @@ const App = () => {
         <Route path="/buy" element={<Buy />} />
         <Route path="/image" element={<ImageUploads />} /> 
         <Route path="/images" element={<ImagesDemo />} /> 
-        <Route path="/sell" element={<Login/>} /> 
+        <Route path="/sell" element={<Sell2/>} /> 
         <Route path="/userProfile" element={session ? <UserProfile /> : <Navigate to = "/"/> } />
       </Routes>
       </main>
