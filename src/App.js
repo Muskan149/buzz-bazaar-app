@@ -38,9 +38,7 @@ const App = () => {
         <Route path="/buy" element={<Buy />} />
         <Route path="/image" element={<ImageUploads />} /> 
         <Route path="/images" element={<ImagesDemo />} /> 
-        {/* <Route path="/sell" element={session ? <Sell2 /> : <Login/>} />  */}
         <Route path="/sell" element={<Login/>} /> 
-        {/* todo: why is navigate to not working here */}
         <Route path="/userProfile" element={session ? <UserProfile /> : <Navigate to = "/"/> } />
       </Routes>
       </main>
