@@ -7,7 +7,7 @@
   
 .col-75 {
     float: left;
-    width: 75%;
+    width: 65%;
     margin-top: 6px;
   }
 
@@ -49,6 +49,7 @@ input[type="text"], textarea {
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
+    gap: 1rem
   }
 
   .sell-heading {
