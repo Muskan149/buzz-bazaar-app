@@ -1,7 +1,7 @@
 #info-col {
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 1rem;
 }
 
 #product-name {

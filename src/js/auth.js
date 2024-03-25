@@ -141,7 +141,7 @@ export async function logout() {
 export async function sendPasswordResetLink() {
     const email = document.getElementById("userEmail").value;
     const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: 'http://localhost:3000/update-password',
+    redirectTo: 'https://buzz-bazaar-app.vercel.app/update-password'
   })
   if (data) {
     alert("We have sent a password reset link to your email (if you have registered earlier with us). Use it to reset your password.")

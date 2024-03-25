@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { supabase } from '../js/supabaseConfig.js'
-import ImageUploads from './ImageUploads.js';
+import ImageUpload from './ImageUpload.js';
 import useUserInfo from '../js/useUserInfo.js';  
 
 const Sell2 = () => {
@@ -35,18 +35,15 @@ const Sell2 = () => {
     };
 
 
-    const [URLList, setURLList] = useState(null);
+    const [publicURL, setPublicURL] = useState(null);
 
-    const handleURLListChange = (urlList) => {
-        if (URLList) {
-            setURLList(urlList.concat(URLList))
-        } else {
-            setURLList(urlList);
-        }
-    };
+   const handlePublicURLChange = (url) => {
+     setPublicURL(url);
+     console.log(url)
+   };
 
     const handleDeleteClick = () => {
-        setURLList(null);
+        setPublicURL(null);
     };
 
     const [characterCount, setCharacterCount] = useState(0);
@@ -124,7 +121,7 @@ const Sell2 = () => {
 
         console.log("still got out of here")
 
-        if (URLList == null) {
+        if (publicURL == null) {
             console.log("bruh")
             alert(`Please upload at least 1 product image`);
             return; // Prevent form submission
@@ -153,7 +150,7 @@ const Sell2 = () => {
                     product_name: product_name,
                     product_category: product_category,
                     product_description: product_description,
-                    product_image: URLList.join(" , "),
+                    product_image: publicURL,
                     product_price: product_price,
                     payment_method: payment_method,
                     rendezvous: hand_over_spot,
@@ -253,15 +250,17 @@ const Sell2 = () => {
                 <legend className='col-25' htmlFor="product_image">Product Image<span class="required"/></legend>
                 <div className="form-group col-75">
                 <div className="image-upload-section">
-                <ImageUploads onURLListChange={handleURLListChange} />
+                {/* <ImageUploads onURLListChange={handleURLListChange} />
                 {URLList && (
+                    <button class ="img-delete-button" onClick={handleDeleteClick}>Delete Images</button>
+                )} */}
+                <ImageUpload onPublicURLChange={handlePublicURLChange} />
+                {publicURL && (
                     <button class ="img-delete-button" onClick={handleDeleteClick}>Delete Images</button>
                 )}
                 </div>
                 <div className="image-carousel">
-                {URLList && URLList.map((url, index) => (
-                    <img key={index} className="img-preview" src={url} alt="Uploaded" />
-                ))}
+                {publicURL && <img  className="img-preview" src={publicURL} alt="Uploaded" />}
                 </div>                
                 </div>
             </fieldset>
