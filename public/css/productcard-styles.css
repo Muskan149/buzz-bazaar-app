@@ -8,6 +8,11 @@
     margin-bottom: 0 !important;
 }
 
+.product-description {
+    max-height: 20%;
+    overflow-y: auto;
+}
+
 .email-button:hover {
     background-color: #5e8c6a;
     color: white;

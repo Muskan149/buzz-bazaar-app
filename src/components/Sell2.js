@@ -255,9 +255,6 @@ const Sell2 = () => {
                     <button class ="img-delete-button" onClick={handleDeleteClick}>Delete Images</button>
                 )} */}
                 <ImageUpload onPublicURLChange={handlePublicURLChange} />
-                {publicURL && (
-                    <button class ="img-delete-button" onClick={handleDeleteClick}>Delete Images</button>
-                )}
                 </div>
                 <div className="image-carousel">
                 {publicURL && <img  className="img-preview" src={publicURL} alt="Uploaded" />}
