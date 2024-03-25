@@ -40,6 +40,7 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={ session ? <ResetPassword /> : <Login />} />
         <Route path="/buy" element={<Buy />} />
+        <Route path="/image" element={<ImageUpload />} />
         <Route path="/sell" element={ session ? <Sell2 /> : <Login />}/>
         <Route path="/userProfile" element={session ? <UserProfile /> : <Navigate to = "/"/> } />
       </Routes>
