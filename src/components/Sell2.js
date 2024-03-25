@@ -249,16 +249,7 @@ const Sell2 = () => {
             <fieldset>
                 <legend className='col-25' htmlFor="product_image">Product Image<span class="required"/></legend>
                 <div className="form-group col-75">
-                <div className="image-upload-section">
-                {/* <ImageUploads onURLListChange={handleURLListChange} />
-                {URLList && (
-                    <button class ="img-delete-button" onClick={handleDeleteClick}>Delete Images</button>
-                )} */}
-                <ImageUpload onPublicURLChange={handlePublicURLChange} />
-                </div>
-                <div className="image-carousel">
-                {publicURL && <img  className="img-preview" src={publicURL} alt="Uploaded" />}
-                </div>                
+                    <ImageUpload onPublicURLChange={handlePublicURLChange} />
                 </div>
             </fieldset>
 

@@ -91,16 +91,14 @@ const ImageUpload = ({ onPublicURLChange }) => {
   return (
     <>
     <div className="image-upload-section">
-    <FileUploader
-    handleChange={(file) => handleChange(file)}
-    name="image"
-    types={fileTypes}
-    />
-    {URL && ( <button class ="img-delete-button" onClick={handleDeleteClick}>Delete Images</button>)}
+      <FileUploader
+      handleChange={(file) => handleChange(file)}
+      name="image"
+      types={fileTypes}
+      />
+      {URL && ( <button class ="img-delete-button" onClick={handleDeleteClick}>Delete Images</button>)}
     </div>
-    <div className="image-carousel">
     {URL && <img className="img-preview" src={URL} alt="Uploaded" />}
-    </div>
   </>
     
   );

@@ -244,6 +244,7 @@ input[type="text"]:focus, textarea:focus {
 }
 
 .img-preview {
+    margin-top: 1rem;
     height: 200px;
     width: auto;
 }
@@ -651,6 +652,7 @@ h3 {
 
 .image-upload-section {
     display: flex;
+    flex-direction: row;
     align-items: center;
 }
 
