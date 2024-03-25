@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { supabase } from '../js/supabaseConfig.js'
-import useUserInfo from '../js/useUserInfo.js';  
 import ImageUploads from './ImageUploads.js';
+import useUserInfo from '../js/useUserInfo.js';  
 
 const Sell2 = () => {
     const { user, userId, userInfo } = useUserInfo();

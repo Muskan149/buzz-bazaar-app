@@ -7,6 +7,8 @@ import Sell2 from './components/Sell2';
 import ImageUpload from './components/ImageUpload.js';
 import ImageUploads from './components/ImageUploads.js';
 import ImagesDemo from './components/ImagesDemo.js';
+import ForgotPassword from './components/ForgotPassword.js';
+import UpdatePassword from './components/UpdatePassword.js';
 import UserProfile from './components/UserProfile';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -35,9 +37,9 @@ const App = () => {
         <Route path="/index" element={<Index />} />
         <Route path="/login" element={<Login/>} />
         <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/update-password" element={<UpdatePassword />} />
         <Route path="/buy" element={<Buy />} />
-        {/* <Route path="/image" element={<ImageUploads />} />  */}
-        {/* <Route path="/images" element={<ImagesDemo />} />  */}
         <Route path="/sell" element={<Sell2/>} /> 
         <Route path="/userProfile" element={session ? <UserProfile /> : <Navigate to = "/"/> } />
       </Routes>

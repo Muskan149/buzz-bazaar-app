@@ -1,3 +1,4 @@
+import { redirect } from 'react-router-dom';
 import { supabase } from './supabaseConfig.js';
 
 // Deciding the type of auth to perform: login or register
@@ -9,8 +10,7 @@ export function performAuth(userPFP =  null) {
         } else {
             login(userPFP)
         }
-    }
-    
+    }  
 }
 
 // Register function
@@ -83,8 +83,6 @@ export async function register(userPFP) {
             // Handle the error as needed
         } else {
             console.log("User profile updated successfully");
-            // Redirect user to /index
-            window.location.href = "/index";
         }
     } else {
         console.error("Error during registration:", signUpError.message);
@@ -137,4 +135,32 @@ export async function logout() {
 
     }
     console.log("Logged out")
+}
+
+export async function sendPasswordResetLink() {
+    const email = document.getElementById("userEmail").value;
+    const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: 'http://localhost:3000/update-password',
+  })
+  if (data) {
+    alert("We have sent a password reset link to your email (if you have registered earlier with us). Use it to reset your password.")
+  } 
+}
+
+export async function updatePassword(email) {
+    const new_password = document.getElementById("userPassword").value;
+
+    if (!(new_password.length >= 6 && new_password.length <= 72)) {
+        alert("The password must be at least 6 and at most 72 characters long!");
+        return;
+    }
+    const { data, error } = await supabase.auth.updateUser({
+        password: new_password
+      })
+
+    if (data) {
+        alert("Password updated successfully!")
+        // Redirect user to /index
+        window.location.href = "/";
+    } 
 }

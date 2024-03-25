@@ -44,9 +44,14 @@ const Login = ( prevPage = "/" ) => {
             Login
           </button>
           <br />
-          <label className="auth-alt">
-            Don't have an account? <Link to="/register">Register</Link>
-          </label>
+          <div id="register-and-forgot-pw">
+            <label className="auth-alt">
+              Don't have an account? <Link to="/register">Register</Link>
+            </label>
+            <label className="forgot-pw">
+            <Link to="/forgot-password">Forgot Password?</Link>
+            </label>
+          </div> 
         </form>
       </div>
     </>
