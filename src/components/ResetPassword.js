@@ -4,7 +4,7 @@ import { updatePassword } from '../js/auth';
 import useUserInfo from '../js/useUserInfo.js';  
 
 
-const UpdatePassword = () => {
+const ResetPassword = () => {
     // State to manage the show password checkbox
    const [showPassword, setShowPassword] = useState(false);
 
@@ -39,4 +39,4 @@ const UpdatePassword = () => {
     );
 };
 
-export default UpdatePassword;
+export default ResetPassword;
