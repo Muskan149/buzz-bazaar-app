@@ -83,6 +83,7 @@ export async function register(userPFP) {
             // Handle the error as needed
         } else {
             console.log("User profile updated successfully");
+            window.location.href = "/"
         }
     } else {
         console.error("Error during registration:", signUpError.message);
@@ -147,7 +148,7 @@ export async function sendPasswordResetLink() {
   } 
 }
 
-export async function updatePassword(email) {
+export async function updatePassword() {
     const new_password = document.getElementById("userPassword").value;
 
     if (!(new_password.length >= 6 && new_password.length <= 72)) {
@@ -161,6 +162,6 @@ export async function updatePassword(email) {
     if (data) {
         alert("Password updated successfully!")
         // Redirect user to /index
-        window.location.href = "/";
+        window.location.href = "/login";
     } 
 }

@@ -7,17 +7,9 @@ import useUserInfo from '../js/useUserInfo.js';
 const UpdatePassword = () => {
     // State to manage the show password checkbox
    const [showPassword, setShowPassword] = useState(false);
-   const { user, userId, userInfo } = useUserInfo();
-
-   if (userId && userInfo) {
-    console.log(Object.values(user));
-    console.log(user.email)
-}
 
    const handlePasswordReset = () => {
-    if (userId && userInfo) {
-        updatePassword(user.email)
-    }
+        updatePassword()
   };
 
     return (

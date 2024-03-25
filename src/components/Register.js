@@ -30,6 +30,7 @@ const Register = () => {
                 <div className="form-group">
                         <label htmlFor="userEmail" className='required' required>GT Email address (..@gatech.edu)</label>
                         <input type="email" className="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="example@gatech.edu" required/>
+                        <small id="emailHelp" className="form-text text-muted">Buyers can use your email and contact number to contact you.</small>
                 </div>
                 <br />
                 <div className="form-group">
@@ -57,7 +58,7 @@ const Register = () => {
                     {/* USER PFP */}
                     <div className="form-group">
                         <label htmlFor="userEmail">Your PFP</label>
-                        <ImageUpload onPublicURLChange={handlePublicURLChange} />
+                        <ImageUpload id="pfp-upload" onPublicURLChange={handlePublicURLChange} />
                     </div>
                     <br />
                     {/* <div className="form-group">

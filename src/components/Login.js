@@ -21,7 +21,6 @@ const Login = ( prevPage = "/" ) => {
           <div className="form-group">
             <label htmlFor="userEmail">GT Email address (..@gatech.edu)</label>
             <input type="email" className="form-control" id="userEmail" aria-describedby="emailHelp" placeholder="example@gatech.edu" autoComplete="username" />
-            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
           <br />
           <div className="form-group">
