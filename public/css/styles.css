@@ -682,3 +682,14 @@ h3 {
 button:hover {
     background-color: #0056b3;
 }
+
+/* Responsive layout - when the screen is less than 900px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 900px) {
+
+    .login-main {
+        width: 75%;
+        margin: 3rem auto;
+        padding: 3rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+}
