@@ -286,6 +286,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 1rem;
+    text-align: center;
 }
 
 #forgot-pw {

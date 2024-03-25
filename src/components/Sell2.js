@@ -316,7 +316,7 @@ const Sell2 = () => {
             <fieldset>
                 <legend className='col-25' htmlFor="hand_over_spot">Where do you prefer to meet and hand over the product?<span class="required"/></legend>
                 <div className="form-group col-75">
-                    <input id="hand_over_spot" type="text" name="hand_over_spot" className="form-control" onChange={handleInputChange}/>
+                    <input id="hand_over_spot" type="text" name="hand_over_spot" className="form-control" placeholder="CULC / Near Kaldi's" onChange={handleInputChange}/>
                 </div>
             </fieldset>
             <button type="submit" id="sell-submit-button" className="btn btn-primary">Submit</button>
