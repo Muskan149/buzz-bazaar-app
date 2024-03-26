@@ -17,16 +17,26 @@ const ProductCard = ({ data, toDelist }) => {
     if (confirmation) {
         // Implement your delist logic here
         console.log("Delisting product with ID:", productId);
-        const { error } = await supabase
-            .from('product_info')
-            .delete()
-            .eq('product_id', productId);
 
-        if (error) {
-            console.error(error);
-        } else {
+        const { error: updateError } = await supabase
+          .from('product_info')
+          .update({ isDelisted: true })
+          .eq('product_id', productId)
+
+          if (updateError) {
+            console.error(updateError);
+          } 
+        
+        // const { error } = await supabase
+        //     .from('product_info')
+        //     .delete()
+        //     .eq('product_id', productId);
+
+        // if (error) {
+        //     console.error(error);
+        // } 
+        else {
             alert("Item de-listed!");
-
             // Redirect the user to the userProfile page
             window.location.href = "/userProfile"; // Change the URL as needed
         }
@@ -38,7 +48,7 @@ const ProductCard = ({ data, toDelist }) => {
     };
 
   return (
-    <div className='row justify-content-center mb-3'>
+    <div className='row justify-content-center mb-3' style={{ display: data["isDelisted"] ? 'none' : 'flex' }}>   
     <div className="col-md-12 col-xl-10">
       <div className="card shadow-0 border rounded-3">
         <div className="card-body">
@@ -77,7 +87,7 @@ const ProductCard = ({ data, toDelist }) => {
               <div className="d-flex flex-column mt-4">
                 {toDelist ? (
                   <button className="btn btn-danger" type="button" style={{ width: '100%' }} onClick={() => delist(data["product_id"])}>
-                    Remove Product
+                    De-List Product
                   </button>
                 ) : (
                   <>
