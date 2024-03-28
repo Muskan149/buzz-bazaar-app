@@ -19,6 +19,7 @@ const useUserInfo = () => {
                     .select("*")
                     // Filters
                     .eq("id", data.user.id) 
+                    .eq("id", data.user.id) 
                 if (user_profiles) {
                     console.log("userProfile: " + Object.entries(user_profiles))
                     setUserInfo(user_profiles["0"])
@@ -27,7 +28,8 @@ const useUserInfo = () => {
                 const { data: userProductInfo, error: userProductInfoError } = await supabase
                     .from('product_info')
                     .select()
-                    .eq('user_id', data.user.id); // Filter records by userId
+                    .eq('user_id', data.user.id) // Filter records by userId
+                    .eq('isDelisted', false); // Filter records by userId
                     if (userProductInfoError) {
                         console.error('Error retrieving data:', userProductInfoError.message);
                     } else {
