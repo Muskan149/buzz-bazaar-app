@@ -10,7 +10,8 @@ const useProductInfo = () => {
       try {
         const { data, error } = await supabase
           .from('product_info')
-          .select();
+          .select()
+          .eq("isDelisted", false);
         if (error) {
           setErrorFetchingData('Error retrieving data');
           console.error('Error retrieving data:', error);
